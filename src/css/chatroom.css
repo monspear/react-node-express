@@ -1,0 +1,71 @@
+
+.chatroom-wrap{
+    min-width: 500px;
+    width: 80%;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10%;
+    height: 80%;
+    font-size: 20px;
+    padding: 20px;
+}
+.chatroom-wrap .chatroom-content{
+    
+    height: 500px;
+    overflow: auto; 
+}
+.chatroom-wrap .chatroom-content .the-other-chat{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    left: 30px;
+    width: 95%;
+}
+.chatroom-wrap .chatroom-content .my-chat{
+    position: relative;
+    display: flex;
+    justify-content: right;
+    left : 30px;
+    width: 95%;
+}
+.my-chat .my-chat-wrap{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.my-chat-wrap .chat-info{
+   display: flex;
+   justify-content: right;
+}
+.my-chat-wrap .my-chat-content{
+    position: relative;
+    display: flex;
+    justify-content: right;
+}
+.chat-img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.the-other-chat .the-other-chat-wrap{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.the-other-chat-wrap .chat-info{
+    display: flex;
+    justify-content: left;
+ }
+ .the-other-chat-wrap .the-other-chat-content{
+    position: relative;
+    display: flex;
+    justify-content: left;
+ }
+
+ .chat-write input{
+    width: 400px;
+    min-width: 400px;
+ }
+

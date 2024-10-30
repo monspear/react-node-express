@@ -1,0 +1,16 @@
+
+.register-conntent{
+    display: inline-block;
+    min-width: 500px;
+    width: 500px;
+    background-color: white;
+    border-radius: 10%;
+    padding: 20px;
+    border: 1px solid black;
+    border-color: black;
+}
+
+#register-nickname, #register-email, #register-id, #register-password, #register-confirm-password{
+    display: inline;
+    width: 300px;
+}
