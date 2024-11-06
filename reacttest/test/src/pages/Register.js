@@ -5,10 +5,10 @@ import '../css/register.css'
 function Register(){
     const [registerInput, setRegisterInput] = useState({
         nickname : "",
-        email : "",
-        id : "", 
-        password : "",
-        confirmPassword : "",
+        u_eamil : "",
+        u_id : "", 
+        u_password : "",
+        u_checked_password : "",
     });
     
     function handleRegisterInputChange(field, event){
@@ -36,26 +36,26 @@ function Register(){
 
                 <h3>이메일</h3>
                 <input type="email" id="register-email" className="form-control" 
-                onChange={(event) => handleRegisterInputChange("email", event)} 
-                value={registerInput.email}>
+                onChange={(event) => handleRegisterInputChange("u_eamil", event)} 
+                value={registerInput.u_eamil}>
                 </input>
 
                 <h3>아이디</h3>
                 <input type="text" id="register-id" className="form-control" 
-                onChange={(event) => handleRegisterInputChange("id", event)} 
-                value={registerInput.id}>
+                onChange={(event) => handleRegisterInputChange("u_id", event)} 
+                value={registerInput.u_id}>
                 </input>
 
                 <h3>비밀번호</h3>
                 <input type="password" id="register-password" className="form-control" 
-                onChange={(event) => handleRegisterInputChange("password", event)} 
-                value={registerInput.password}>
+                onChange={(event) => handleRegisterInputChange("u_password", event)} 
+                value={registerInput.u_password}>
                 </input>
 
                 <h3>비밀번호확인</h3>
                 <input type="password" id="register-confirm-password" className="form-control" 
-                onChange={(event) => handleRegisterInputChange("confirmPassword", event)} 
-                value={registerInput.confirmPassword}>
+                onChange={(event) => handleRegisterInputChange("u_checked_password", event)} 
+                value={registerInput.u_checked_password}>
                 </input>
 
                 <br></br><br></br>
