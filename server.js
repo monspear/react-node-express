@@ -1,24 +1,26 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+app.use(express.json()) // 이거 안쓰면 클라이언트에서 보낸 값들이 undefined object로 나타남. (기본값이 undefined라서 그럼)
 
-var mysql      = require('mysql');
+var mysql = require('mysql');
+
 var connection = mysql.createConnection({
   host     : '127.0.0.1', // localhost로 표시하면 IPv6 주소인 ::1로 해석될 수 있다. 즉 ::1:3306에서 연결거부가 일어날 수 있으니 주의하자
   user     : 'root',
   password : '132435',
   database : 'react_node_express'
 });
- 
+ /*
 connection.connect();
  
 connection.query('SELECT * from react_node_express_user', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results);
+  //if (error) throw error;
+  //console.log('The solution is: ', results);
 });
  
 connection.end();
-
+*/
 app.listen(8080,function(){
     console.log('listening on 8080')
 })
@@ -53,3 +55,25 @@ app.get('/Register', (req, res) => {
     res.sendFile(path.join(__dirname, '/reacttest/test/build/index.html'));
 });
 // npm i mysql 로 mysql에 연결할 수 있게
+
+app.post('/Register', (req, res) => {
+    
+    connection.connect();
+    var sql = 'INSERT INTO react_node_express_user VALUES(NULL,?,?,?,?,?)';
+    var values = [req.body.nickname, req.body.u_eamil, req.body.u_id, req.body.u_password, req.body.u_checked_password];
+    console.log("받은 값 = "+values);
+    connection.query(sql,values, function (error, result, fields) {
+        if (error){
+            console.log("서버단에서 에러발생"+error);
+            connection.end();
+        }
+        console.log("Number of records inserted: " + result.affectedRows);
+    });
+     
+    connection.end();
+    res.status(200);
+
+
+    //console.log("req = "+req.body);
+    //console.log("res = "+res.body);
+});

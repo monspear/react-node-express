@@ -21,6 +21,22 @@ function Register(){
     function handleRegisterSubmit(event){
         event.preventDefault(); //일단 섭밋하지말고
         console.log(registerInput);
+        fetch("/Register",{
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json",
+            },
+            body: JSON.stringify(registerInput),
+        }).then((res) => res.json())
+        .then((res) => {
+            console.log(res.status)
+            if(!(res.success)){
+
+                alert("제대로 가지 않았습니다.");
+            }
+        }).catch((err) => {
+            console.error("회원가입 중 에러가 발생"+err);
+        });
     }
 
     return (
