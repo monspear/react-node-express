@@ -51,16 +51,6 @@ function Chatroom(){
                         <div className="the-other-chat-content">저는 갈비탕 먹었습니다.</div>
                     </div>
                 </div>
-                <div className="the-other-chat">
-                    <div className="the-other-chat-wrap">
-                        <div className="chat-info">
-                            <div className="chat-img"><img src="/" ></img></div>
-                            <div className="name"> &nbsp; 이름2 | </div>
-                            <div className="time-zone"> &nbsp; 2024-09-19 19:00 </div>
-                        </div>
-                        <div className="the-other-chat-content">저는 도시락 먹었네요</div>
-                    </div>
-                </div>
             </div>
             <div className="chat-write">
                 <form>
