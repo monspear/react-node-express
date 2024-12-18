@@ -77,6 +77,7 @@ app.post('/Register', (req, res) => {
         } 
     });
     //connection.end();
+    //지금 여기서 2번이상 시행하는 것에 문제가 생기는중, 아무래도 fetch 부분에서 받는 부분의 처리가 미흡하거나 비동기 방식으로 하지 않아서 생기는 문제로 추정 
     /*
     
     https://velog.io/@hseoy/%EC%9E%90%EC%A3%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-10%EA%B0%80%EC%A7%80-HTTP-Status-Code
